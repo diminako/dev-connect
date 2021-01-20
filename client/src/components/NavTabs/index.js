@@ -5,29 +5,13 @@ function NavTabs() {
   const location = useLocation();
 
   return (
-    <ul className="navbar navbar-expand-lg navbar-light bg-info">
-      <li className="nav-item navbar-nav h5">
-        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Log In
-        </Link>
-      </li>
-      <li className="nav-item navbar-nav ml-auto h5 ">
-        <Link
-          to="/signup"
-          className={location.pathname === "/signup" ? "nav-link active" : "nav-link"}
-        >
-          Sign Up
-        </Link>
-      </li>
-      <li className="nav-item navbar-nav ml-auto h5 ">
-        <Link
-          to="/message"
-          className={location.pathname === "/message" ? "nav-link active" : "nav-link"}
-        >
-          Message Board
-        </Link>
-      </li>
-    </ul>
+    <ul class="medium-horizontal menu align-right">
+    <li><Link to="/"  className={location.pathname === "/login" ? "Login" : ""}><i class="fi-list"></i><span>Login</span></Link></li> 
+      
+    <li><Link to="/signup" className={location.pathname === "/signup" ? "Sign Up" : ""}><i class="fi-list"></i><span>Sign Up</span></Link></li> 
+    <li><Link to="/message" className={location.pathname === "/message" ?   "Message" : ""}><i class="fi-list"></i><span>Message</span></Link></li> 
+   </ul>
+   
   );
 }
 
