@@ -1,24 +1,34 @@
 import React from "react";
 
-
 function Login() {
   return (
-    <div>
-    <div className="container">
-        <div className="row">
-            <div className="col-md-12">
-                <div className="page-header">
-                    <h1 className="text-center">Login Page</h1>
-                   
-                </div>
+    <>
+  
 
-            </div>
-
-          
-        </div>
-
-    </div>
-    </div>
+          <h1 class="align-right">Login</h1>
+      
+          <div className="callout">
+            <form>
+              <div className="grid-container">
+                <div className="grid-x grid-padding-x">
+                      <div className="small-8 cell">
+                        <label>
+                          Username
+                          <input type="text" placeholder="username" />
+                        </label>
+                      </div>
+                      <div className="small-8 cell">
+                        <label>
+                          Password
+                          <input type="text" placeholder="password" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+            </form>
+          </div>
+        
+    </>
   );
 }
 
