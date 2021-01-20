@@ -1,4 +1,13 @@
 const express = require("express");
+const cors = require("cors");
+const passport = require("passport");
+const cookieParser = require("cookie-parser");
+const bcrypt= require("bcryptjs");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const User = require("./user");
+
+
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -17,7 +26,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+},
+() => {
+  console.log("mongoose is connected")
+});
 
 // Start the API server
 app.listen(PORT, function() {
