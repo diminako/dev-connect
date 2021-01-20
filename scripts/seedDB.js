@@ -19,7 +19,7 @@ db.Devs
   .remove({})
   .then(() => db.Devs.collection.insertMany(devProfile))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " profile inserted!");
     process.exit(0);
   })
   .catch(err => {
