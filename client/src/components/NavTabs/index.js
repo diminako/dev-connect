@@ -19,6 +19,14 @@ function NavTabs() {
           Sign Up
         </Link>
       </li>
+      <li className="nav-item navbar-nav ml-auto h5 ">
+        <Link
+          to="/message"
+          className={location.pathname === "/message" ? "nav-link active" : "nav-link"}
+        >
+          Message Board
+        </Link>
+      </li>
     </ul>
   );
 }
