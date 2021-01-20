@@ -56,6 +56,41 @@ require("./passportConfig")(passport);
 
 //....................end of Middleware...........................................
 
+app.post ("/", (req, res, next) =>{
+  passport.authenticate("local", (err,user,info) =>{
+      if (err) throw err;
+      if (!user) res.send("no user exists");
+      else {
+          req.login(user, err => {
+              if (err) throw err;
+              res.send("successfully authenticated");
+              console.log(req.user);
+          })
+      }
+  })(req, res, next);
+});
+
+app.post ("/signup", (req,res) =>{
+  User.findOne({username: req.body.username}, async (err,doc) => {
+      if (err) throw err;
+      if (doc) res.send("User Already Exists");
+      if (!doc){
+          const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+          const newUser = new User({
+              username: req.body.username,
+              password: hashedPassword
+          });
+          await newUser.save();
+          res.send("User Created");
+      }
+  })
+});
+
+app.get ("/message", (req,res) =>{
+  res.send(req.user);
+})
+
 
 
 
