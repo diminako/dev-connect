@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-function Login() {
+
+const  Login = () => {
+
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+
+  const login = () =>{
+    axios({
+      method: "POST",
+      data: {
+        username: loginUsername,
+        password: loginPassword,
+      },
+      withCredentials: true,
+      url: "http://localhost:3000/login",
+    }).then((res) => console.log(res));
+
+  };
+
+
+
   return (
     <>
   
@@ -14,14 +36,17 @@ function Login() {
                       <div className="small-8 cell">
                         <label>
                           Username
-                          <input type="text" placeholder="username" />
+                          <input type="text" onChange={e => setLoginUsername(e.target.value)} placeholder="username" />
                         </label>
                       </div>
                       <div className="small-8 cell">
                         <label>
                           Password
-                          <input type="text" placeholder="password" />
+                          <input type="password" onChange={e => setLoginPassword(e.target.value)} placeholder="password" />
                         </label>
+                      </div>
+                      <div className="small-8 cell">
+                        <button onClick={login} >Submit</button>
                       </div>
                     </div>
                   </div>
