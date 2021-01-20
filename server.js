@@ -34,6 +34,34 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
   console.log("mongoose is connected")
 });
 
+// .....................Middleware..................................................
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
+
+app.use(session({
+  secret: "secretcode",
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(cookieParser("secretcode"));
+app.use(passport.initialize());
+app.use(passport.session());
+require("./passportConfig")(passport);
+
+//....................end of Middleware...........................................
+
+
+
+
+
+
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
