@@ -3,10 +3,7 @@ import React from "react";
 
 function Improvements() {
     return (
-
-        <div> Improvement Component
-
-                    </div>
+      <h5>Improvement Opportunities</h5>
   );
 }
 

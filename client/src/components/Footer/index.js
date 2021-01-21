@@ -12,42 +12,33 @@ function Footer() {
                     <div className="footerTitle"> Useful Links</div>
                     <div className="footer-content">
                         <div className="footer-section">
+                            <p><a href="https://www.google.com/"><img
+                                className="logo enlarge" src={ImagePH}
+                                alt={"PLACEHOLDER"} />
+                            </a>
+                            </p>
+                        </div>
+                        <div className="footer-section">
+                            <p><a href="https://www.google.com/"><img
+                                className="logo enlarge" src={ImagePH}
+                                alt={"PLACEHOLDER"} />
+                            </a>
+                            </p>
+                        </div>
+                        <div className="footer-section">
 
                             <p><a href="https://www.google.com/"><img
                                 className="logo enlarge" src={ImagePH}
                                 alt={"PLACEHOLDER"} />
                             </a>
                             </p>
-
-                        </div>
-                        <div className="footer-section">
-                        <p><a href="https://www.google.com/"><img
-                                className="logo enlarge" src={ImagePH}
-                                alt={"PLACEHOLDER"} />
-                            </a>
-                            </p>
-
-
-                        </div>
-                        <div className="footer-section">
-                            <br />
-
-                            <p><a href="https://www.google.com/"><img
-                                className="logo enlarge" src={ImagePH}
-                                alt={"PLACEHOLDER"} />
-                            </a>
-                            </p>
-
                         </div>
                     </div>
                 </div>
-
-
                 <div className="footer-bottom">
-              Group 3 Final Project
-        </div>
+                    Group 3 Final Project
+             </div>
             </div>
-           
         </div>
 
     );

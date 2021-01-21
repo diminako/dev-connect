@@ -1,11 +1,11 @@
 import React from "react";
+import "./style.css";
 
 
 function NavBar() {
     return (
-
-        <div> Header Component 
-                    </div>
+    
+      <div></div>
   );
 }
 
