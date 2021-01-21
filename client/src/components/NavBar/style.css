@@ -1,5 +1,5 @@
-.top-bar, .nav {
-    color: black;
-    background-color: white;
+.top-bar, .nav, .horizontal.menu.top-bar-right.nav {
+    color: white;
+    background-color: black;
     font-family: 'Caveat', cursive;
 }

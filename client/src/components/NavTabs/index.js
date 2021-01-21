@@ -7,7 +7,7 @@ function NavTabs() {
   return (
     <div class="top-bar">
       <div class="top-bar-left">
-        <ul class="menu-text nav"><h1 class="nav">DevConnect</h1></ul>
+      <h1 class="nav">DevConnect</h1> <h5><span>...where developers come to &lt;link&gt; up</span></h5>
       </div>
       <ul class="horizontal menu top-bar-right nav">
         <li><Link to="/" className={location.pathname === "/login" ? "Login" : ""}><i class="fi-list nav"></i><span><h3 class="nav">Login</h3></span></Link></li>

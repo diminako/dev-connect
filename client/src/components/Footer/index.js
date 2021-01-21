@@ -26,7 +26,7 @@ function Footer() {
                             </p>
                         </div>
                         <div className="footer-section">
-                           
+
                             <p><a href="https://www.google.com/"><img
                                 className="logo enlarge" src={ImagePH}
                                 alt={"PLACEHOLDER"} />
@@ -35,12 +35,10 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-
                 <div className="footer-bottom">
                     Group 3 Final Project
-        </div>
+             </div>
             </div>
-
         </div>
 
     );
