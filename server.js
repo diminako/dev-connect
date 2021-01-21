@@ -84,6 +84,7 @@ app.post ("/api/signup", (req,res) =>{
           });
           await newUser.save();
           res.send("User Created");
+        
       }
   })
 });
