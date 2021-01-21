@@ -6,6 +6,7 @@ const SignUp = () => {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerSkill, setRegisterSkill] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
 
   const register = (event) => {
     event.preventDefault();
@@ -13,6 +14,7 @@ const SignUp = () => {
     axios({
       method: "POST",
       data: {
+        email: registerEmail,
         username: registerUsername,
         password: registerPassword,
         skill: registerSkill
@@ -52,11 +54,11 @@ const SignUp = () => {
                         <div className="small-6 cell">
                           <label>
                             <h4>Enter Email</h4>
-                            <input type="text" placeholder="email" />
+                            <input onChange={e => setRegisterEmail(e.target.value)} type="text" placeholder="email" />
                           </label>
                         </div>
                       </div>
-                      <div class="grid-x">
+                      <div className="grid-x">
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
@@ -65,7 +67,7 @@ const SignUp = () => {
                           </label>
                         </div>
                       </div>
-                      <div class="grid-x">
+                      <div className="grid-x">
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
@@ -74,7 +76,7 @@ const SignUp = () => {
                           </label>
                         </div>
                       </div>
-                      <div class="grid-x">
+                      <div className="grid-x">
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>

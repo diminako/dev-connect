@@ -77,11 +77,14 @@ app.post ("/api/signup", (req,res) =>{
           const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
           const newUser = new User({
+              email: req.body.email,
               username: req.body.username,
-              password: hashedPassword
+              password: hashedPassword,
+              skill: req.body.skill
           });
           await newUser.save();
           res.send("User Created");
+        
       }
   })
 });
