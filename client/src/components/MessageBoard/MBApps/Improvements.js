@@ -3,10 +3,10 @@ import React from "react";
 
 function Improvements() {
     return (
-
         <div> Improvement Component
-
-                    </div>
+          <h5 className="text-center">Profile</h5>
+              <p className="text-center">Username</p>
+        </div>
   );
 }
 

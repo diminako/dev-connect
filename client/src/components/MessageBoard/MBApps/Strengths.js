@@ -5,8 +5,9 @@ function Strengths() {
     return (
 
         <div> Strengths Component
-
-                    </div>
+          <h5 className="text-center">Profile</h5>
+              <p className="text-center">Username</p>
+        </div>
   );
 }
 
