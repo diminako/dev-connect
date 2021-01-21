@@ -8,7 +8,9 @@ const  Login = () => {
   const [loginPassword, setLoginPassword] = useState("");
 
 
-  const login = () =>{
+  const login = (event) =>{
+    event.preventDefault();
+    console.log("login click")
     axios({
       method: "POST",
       data: {
@@ -16,7 +18,7 @@ const  Login = () => {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:3000/login",
+      url: "/api/",
     }).then((res) => console.log(res));
 
   };
@@ -27,10 +29,10 @@ const  Login = () => {
     <>
   
 
-          <h1 class="align-right">Login</h1>
+          <h1 className="align-right">Login</h1>
       
           <div className="callout">
-            <form>
+            <form onSubmit={login}>
               <div className="grid-container">
                 <div className="grid-x grid-padding-x">
                       <div className="small-8 cell">
@@ -46,7 +48,7 @@ const  Login = () => {
                         </label>
                       </div>
                       <div className="small-8 cell">
-                        <button onClick={login} >Submit</button>
+                        <button type="submit" >Submit</button>
                       </div>
                     </div>
                   </div>

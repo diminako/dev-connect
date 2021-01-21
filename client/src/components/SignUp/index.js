@@ -6,15 +6,17 @@ const SignUp = () => {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
 
-  const register = () =>{
+  const register = (event) =>{
+    event.preventDefault();
+    console.log("sign up clicked");
     axios({
       method: "POST",
       data: {
         username: registerUsername,
         password: registerPassword,
       },
-      withCredentials: true,
-      url: "http://localhost:3000/register",
+      // withCredentials: true,
+      url: "/api/signup",
     }).then((res) => console.log(res));
   };
 
@@ -32,7 +34,7 @@ const SignUp = () => {
                    
                 </div>
                 <div className="callout">
-            <form>
+            <form onSubmit={register}>
               <div className="grid-container">
                 <div className="grid-x grid-padding-x">
                       <div className="small-8 cell">
@@ -48,7 +50,7 @@ const SignUp = () => {
                         </label>
                       </div>
                       <div className="small-8 cell">
-                        <button onClick={register} >Submit</button>
+                        <button type='submit' >Submit</button>
                       </div>
                     </div>
                   </div>
