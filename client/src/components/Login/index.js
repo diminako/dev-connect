@@ -24,7 +24,11 @@ const Login = () => {
     }).then((res) => {
 
       console.log(res);
-      history.push("/message");
+
+      if (res.data === "successfully authenticated"){
+
+        history.push("/message");
+      }
     })
     
 
