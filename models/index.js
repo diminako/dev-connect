@@ -1,3 +1,4 @@
 module.exports = {
-  Devs: require("./devs")
+  Devs: require("./devs"),
+  User: require("./user")
 };
