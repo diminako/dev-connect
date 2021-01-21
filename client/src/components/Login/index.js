@@ -2,12 +2,18 @@ import React from "react";
 
 function Login() {
   return (
-    <>
-      <h1 className="text-center">Login</h1>
-      <div className="callout">
+    <><div className="bg" ></div>
+    <h1 className="text-center pg-header">Login</h1>
+      <div className="grid-container">
+            <div className="grid-x grid-padding-x">
+              <div className="small-1 cell"></div>
+              <div className="small-10 cell">
+      <div className="callout small">
         <form>
           <div className="grid-container">
             <div className="grid-x grid-padding-x">
+              
+        
               <div className="small-3 cell"></div>
               <div className="small-6 cell">
                 <label>
@@ -27,6 +33,9 @@ function Login() {
             </div>
           </div>
         </form>
+      </div>
+      </div>
+      </div>
       </div>
     </>
   );
