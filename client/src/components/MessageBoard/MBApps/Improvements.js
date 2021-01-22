@@ -3,7 +3,11 @@ import React from "react";
 
 function Improvements() {
     return (
-      <h5>Improvement Opportunities</h5>
+      <>
+      <h5 className="text-center caveat">Improvement Opportunities</h5>
+        <ul>Skill1</ul>
+       </>
+
   );
 }
 
