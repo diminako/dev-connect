@@ -4,11 +4,10 @@ import React from "react";
 function RoomName() {
   return (
     <>
-      <div className="grid-container chat-box">
+      {/* <div className="grid-container room-grid">
         <div className="grid-x grid-padding-x">
           <div className="small-3 cell"></div>
-          <div className="small-6 cell">
-            <div className="callout">
+          <div className="small-6 cell">*/}
               <h5 className="text-center header">Current Room</h5>
               <label className="header">Select Room
                 <select>
@@ -27,10 +26,9 @@ function RoomName() {
                       <option id="chatSequelize" value="Sequelize">Sequelize</option>
               </select>
               </label>
-            </div>
+            {/* </div>
           </div>
-        </div>
-      </div>
+        </div>*/}
     </>
   );
 }

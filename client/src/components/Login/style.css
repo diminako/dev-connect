@@ -1,6 +1,7 @@
 .grid-container {
     font-family: 'Caveat', cursive;
 }
-.text-center.header {
+.text-center.header, .small-10.cell {
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
 }

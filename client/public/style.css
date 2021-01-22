@@ -10,14 +10,12 @@
     margin-top: 40px;
     }
 
-
 .callout, .caveat {
     font-family: 'Caveat', cursive;
+    border-color: lightgrey;
+    border-width: 4px;
 }
 
-.grid-container {
-   margin-top: 40px;
-}
 
 .card {
     background-color: rgb(114, 101, 101);
@@ -29,23 +27,55 @@
 
 body {
     font-family: 'Caveat', cursive;
-    background-color: #c1db2e;
+    background-color: #afc728;
     /* tan background-color: rgb(226, 201, 168); */
     /* red background-color: rgb(163, 10, 10); */
 }
  .bg { 
-  
     width: 100%;
-
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    margin-bottom: 30px;
   }
 
-  .columns.small-12.footer {
-      width: 100%;
-  }
+h1 {
+    font-weight: bold;
+}
+h2 {
+    text-decoration: underline;
+    
+}
+
+.card-divider {
+    background-color: rgb(184, 172, 172);
+}
+
+::placeholder {
+    color:grey;
+    opacity: 1;
+    font-size: large;
+}
   /* .medium-horizontal.menu.align-right {
       color: black;
       font-family: 'Caveat', cursive;
   } */
+  .Message, .Sign.Up, .button {
+      background-color: black;
+  }
+  .button {
+      display: flex;
+      justify-content: center;
+  }
+.card.online-members {
+    /* height: 300px;  */
+    background-color: white;
+}
+/* 
+.grid-y {
+    height: 500px;
+} */
+
+.card-divider.online {
+    background-color: rgb(49, 129, 235);
+}
+.mb-image {
+    height: 300px;
+}

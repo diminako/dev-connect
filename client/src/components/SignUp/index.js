@@ -109,7 +109,7 @@ const SignUp = () => {
                         </div>
                       </div>
                       <div className="small-8 cell">
-                        <button className="button primary large hover" type='submit' >Submit</button>
+                        <button className="button large hover" type='submit' >Submit</button>
                       </div>
                     </div>
                   </form>
