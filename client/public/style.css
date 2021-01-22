@@ -1,32 +1,81 @@
-/*body {
-    background-image: url("https://media.istockphoto.com/photos/theres-nothing-we-cant-do-together-picture-id889029082?k=6&m=889029082&s=612x612&w=0&h=w2GWKDXWZTsPQe63aEQR4dafjpamSO1TJ3hE0FUx6M8=");
-}  */
+.header {
+    font-family: 'Montserrat', sans-serif;
 
-.mb-header, .pg-header {
+}
+.chat-box {
+    height: 150px;
+}
+
+.sign-up-pg {
+    margin-top: 40px;
+    }
+
+.callout, .caveat {
+    font-family: 'Caveat', cursive;
+    border-color: lightgrey;
+    border-width: 4px;
+}
+
+
+.card {
+    background-color: rgb(114, 101, 101);
+}
+
+.text-center.mb-header.header {
+    margin-bottom: 40px;
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    background-color: #afc728;
+    /* tan background-color: rgb(226, 201, 168); */
+    /* red background-color: rgb(163, 10, 10); */
+}
+ .bg { 
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+h1 {
+    font-weight: bold;
+}
+h2 {
+    text-decoration: underline;
+    
+}
+
+.card-divider {
+    background-color: rgb(184, 172, 172);
+}
+
+::placeholder {
+    color:grey;
+    opacity: 1;
+    font-size: large;
+}
+  /* .medium-horizontal.menu.align-right {
+      color: black;
+      font-family: 'Caveat', cursive;
+  } */
+  .Message, .Sign.Up, .button {
+      background-color: black;
+  }
+  .button {
+      display: flex;
+      justify-content: center;
+  }
+.card.online-members {
+    /* height: 300px;  */
     background-color: white;
 }
-.callout {
-    font-family: 'Caveat', cursive;
+/* 
+.grid-y {
+    height: 500px;
+} */
+
+.card-divider.online {
+    background-color: rgb(49, 129, 235);
 }
-
-.grid-container {
-   margin-top: 40px;
+.mb-image {
+    height: 300px;
 }
-
-body { 
-    font-family: 'Caveat', cursive;
-    /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-193-ae-00070.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a642750a6aa2bf3ff96e964c924dab97"); */
- }
- .bg { 
-  
-    width: 100%;
-
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-  }
-  .medium-horizontal.menu.align-right {
-      color: black;
-      background-color: white;
-      font-family: 'Caveat', cursive;
-  }
