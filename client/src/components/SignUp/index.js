@@ -44,7 +44,7 @@ const SignUp = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="page-header">
-              <h1 className="text-center sign-up-pg">Sign Up Page</h1>
+              <h1 className="text-center header sign-up-pg">Sign Up Page</h1>
 
             </div>
 
@@ -60,7 +60,7 @@ const SignUp = () => {
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
-                            <h4>Enter Email</h4>
+                            <h4 className="header">Enter Email</h4>
                             <input onChange={e => setRegisterEmail(e.target.value)} type="text" placeholder="email" />
                           </label>
                         </div>
@@ -69,7 +69,7 @@ const SignUp = () => {
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
-                            <h4>Enter Username</h4>
+                            <h4 className="header">Enter Username</h4>
                             <input onChange={e => setRegisterUsername(e.target.value)} type="text" placeholder="username" />
                           </label>
                         </div>
@@ -78,7 +78,7 @@ const SignUp = () => {
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
-                            <h4>Enter Password</h4>
+                            <h4 className="header">Enter Password</h4>
                             <input onChange={e => setRegisterPassword(e.target.value)} type="password" placeholder="password" />
                           </label>
                         </div>
@@ -87,9 +87,9 @@ const SignUp = () => {
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
-                          <h4><span>Select Your Skills</span></h4><h5><span> (Multiple Select Menu)</span></h5>
+                          <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
                           </label>
-                          <label><h5>
+                          <label className="caveat"><h5>
                               <select onChange={e => setRegisterSkill(e.target.value)} multiple>
                               <option id="skillAPI" value="API">API</option>
                               <option id="skillAJAX" value="AJAX">AJAX</option>
@@ -109,7 +109,7 @@ const SignUp = () => {
                         </div>
                       </div>
                       <div className="small-8 cell">
-                        <button class="button primary large" type='submit' >Submit</button>
+                        <button className="button primary large hover" type='submit' >Submit</button>
                       </div>
                     </div>
                   </form>

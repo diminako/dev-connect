@@ -4,10 +4,8 @@ import React from "react";
 function Improvements() {
     return (
       <>
-      <h5 className="text-center">Improvement Opportunities</h5>
-      <p>
+      <h5 className="text-center caveat">Improvement Opportunities</h5>
         <ul>Skill1</ul>
-      </p>
        </>
 
   );

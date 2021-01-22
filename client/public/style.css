@@ -1,33 +1,38 @@
-button  {
-    color: black;
-}
+.header {
+    font-family: 'Montserrat', sans-serif;
 
+}
 .chat-box {
     height: 150px;
 }
-
-
 
 .sign-up-pg {
     margin-top: 40px;
     }
 
-.mb-header, .pg-header {
-    background-color: white;
-}
-.callout {
+
+.callout, .caveat {
     font-family: 'Caveat', cursive;
-    border: black;
 }
 
 .grid-container {
    margin-top: 40px;
 }
 
+.card {
+    background-color: rgb(114, 101, 101);
+}
+
+.text-center.mb-header.header {
+    margin-bottom: 40px;
+}
+
 body {
     font-family: 'Caveat', cursive;
-    /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-193-ae-00070.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a642750a6aa2bf3ff96e964c924dab97"); */
- }
+    background-color: #c1db2e;
+    /* tan background-color: rgb(226, 201, 168); */
+    /* red background-color: rgb(163, 10, 10); */
+}
  .bg { 
   
     width: 100%;
@@ -36,8 +41,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover; */
   }
-  .medium-horizontal.menu.align-right {
-      color: black;
-      background-color: white;
-      font-family: 'Caveat', cursive;
+
+  .columns.small-12.footer {
+      width: 100%;
   }
+  /* .medium-horizontal.menu.align-right {
+      color: black;
+      font-family: 'Caveat', cursive;
+  } */

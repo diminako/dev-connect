@@ -9,8 +9,8 @@ function RoomName() {
           <div className="small-3 cell"></div>
           <div className="small-6 cell">
             <div className="callout">
-              <h5 className="text-center">Current Room</h5>
-              <label>Select Room
+              <h5 className="text-center header">Current Room</h5>
+              <label className="header">Select Room
                 <select>
                       <option id="chatAPI" value="API">API</option>
                       <option id="chatAJAX" value="AJAX">AJAX</option>

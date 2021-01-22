@@ -17,7 +17,7 @@ function MessageBoard() {
           </div>
         
       <div className="grid-container fluid">
-      <h1 className="text-center mb-header">Message Board</h1>
+      <h1 className="text-center mb-header header">Message Board</h1>
 
         <div className="grid-x grid-padding-x">
           <div className="small-3 cell">
@@ -27,8 +27,8 @@ function MessageBoard() {
           </div>
           <div className="small-6 cell">
             <div className="callout">
-              <h2 class="text-center">Profile</h2>
-              <p class="text-center">username</p>
+              <h2 className="text-center header">Profile</h2>
+              <p className="text-center">username</p>
             </div>
           </div>
           <div className="small-3 cell">
