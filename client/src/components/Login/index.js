@@ -38,9 +38,9 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="align-right">Login</h1>
       <img className="bg" alt="teamwork" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-193-ae-00070.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a642750a6aa2bf3ff96e964c924dab97" ></img>
       <div className="grid-container log">
+      <h1 className="text-center">Login</h1>
         <div className="grid-x grid-padding-x">
           <div className="small-1 cell"></div>
           <div className="small-10 cell">
@@ -49,19 +49,19 @@ const Login = () => {
                 <div className="grid-container">
                   <div className="grid-x grid-padding-x">
                     <div className="small-8 cell">
-                      <label>
-                        Username
+                      <label><h5>
+                        Username</h5>
                         <input type="text" onChange={e => setLoginUsername(e.target.value)} placeholder="username" />
                       </label>
                     </div>
                     <div className="small-8 cell">
-                      <label>
-                        Password
+                      <label><h5>
+                        Password</h5>
                         <input type="password" onChange={e => setLoginPassword(e.target.value)} placeholder="password" />
                       </label>
                     </div>
                     <div className="small-8 cell">
-                      <button type="submit" >Submit</button>
+                      <button class="button primary large" type="submit" >Submit</button>
                     </div>
                   </div>
                 </div>

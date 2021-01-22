@@ -3,9 +3,12 @@ import React from "react";
 
 function Strengths() {
     return (
-
-        <div> 
-         </div>
+      <>
+      <h5 className="text-center">Strengths</h5>
+      <p>
+        <ul>Skill1</ul>
+      </p>
+       </>
   );
 }
 

@@ -16,13 +16,12 @@ function MessageBoard() {
             </div>
           </div>
         
-      <div className="grid-container">
+      <div className="grid-container fluid">
       <h1 className="text-center mb-header">Message Board</h1>
 
         <div className="grid-x grid-padding-x">
           <div className="small-3 cell">
-            <div className="callout primary">
-              <h5>Strengths</h5>
+            <div className="callout">
               <Strengths />
             </div>
           </div>
@@ -33,13 +32,15 @@ function MessageBoard() {
             </div>
           </div>
           <div className="small-3 cell">
-            <div className="callout primary">
+            <div className="callout">
               <Improvements />
             </div>
           </div>
         </div>
       </div>
       <RoomName />
+      <Chat />
+     
     </>
   );
 }
