@@ -103,8 +103,18 @@ app.post ("/api/signup", (req,res) =>{
 });
 
 app.get ("/api/message", (req,res) =>{
-  res.json({"test":"test"});
+
+  if (req.user){
+
+    res.json({"test":"test"});
+
+  }
 })
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 // Add routes, both API and view
 // app.use(routes);
