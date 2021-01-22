@@ -8,13 +8,25 @@ const bodyParser = require("body-parser");
 const User = require("./models/user");
 
 const morgan = require('morgan');
-
+const http = require("http")
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const server = http.createServer(app);
+const socket = require("socket.io");
+const io = socket(server);
 
 // Define middleware here
+
+app.use(morgan('tiny'));
+io.on("connection", socket => {
+  console.log('connected')
+  socket.emit("your id", socket.id);
+  socket.on("send message", body => {
+      io.emit("message", body)
+  })
+})
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -22,7 +34,6 @@ app.use(express.json());
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
-
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
@@ -36,9 +47,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
 // .....................Middleware..................................................
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(morgan('tiny'));
+
 // app.use(cors({
-//   origin: "http://localhost:3000",
+//   origin: "http://localhost:3001",
 //   credentials: true
 // }));
 
@@ -54,6 +65,8 @@ app.use(passport.session());
 require("./passportConfig")(passport);
 
 //....................end of Middleware...........................................
+
+
 
 app.post ("/api/", (req, res, next) =>{
   passport.authenticate("local", (err,user,info) =>{
@@ -90,7 +103,7 @@ app.post ("/api/signup", (req,res) =>{
 });
 
 app.get ("/api/message", (req,res) =>{
-  res.send(req.user);
+  res.json({"test":"test"});
 })
 
 // Add routes, both API and view
@@ -101,6 +114,6 @@ app.get ("/api/message", (req,res) =>{
 
 
 // Start the API server
-app.listen(PORT, function() {
+server.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT }!`);
 });
