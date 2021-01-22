@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./style.css";
+import UserContext from "../../Store/UserContext";
 
 
 const Login = () => {
 
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [signInId, setSignUpId] = useState("");
+
+  const user = useContext(UserContext);
 
   const history = useHistory();
 
   const login = (event) => {
     event.preventDefault();
-    console.log("login click")
     axios({
       method: "POST",
       data: {
@@ -24,9 +27,16 @@ const Login = () => {
       url: "/api/",
     }).then((res) => {
 
-      console.log(res);
 
-      if (res.data === "successfully authenticated"){
+      console.log(res.data.username);
+      const userSignIn = res.data.username
+
+      user.onSignIn(userSignIn);
+
+      setSignUpId(userSignIn);
+      
+
+      if (res.data){
 
         history.push("/message");
       }
@@ -34,6 +44,7 @@ const Login = () => {
     
 
   };
+
 
 
 
@@ -102,6 +113,8 @@ const Login = () => {
         </div> */}
     </>
   );
+  module.exports={signInId};
 }
 
 export default Login;
+
