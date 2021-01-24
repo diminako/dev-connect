@@ -10,7 +10,6 @@ import UserContext from '../../Store/UserContext';
 const ChatBox = (props) => {
 
     const {username} = useContext(UserContext);
-    const [room, setRoom] = useState('JavaScript');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
@@ -30,9 +29,9 @@ const ChatBox = (props) => {
 
     useEffect(() => {
         socketRef.current = io.connect('/');
-        // socketRef.current.on("your id", id => {
-        //     console.log(id, "id");
-        // })
+        socketRef.current.on("your id", id => {
+            console.log(id, "id");
+        })
         socketRef.current.on(props.type ? props.type : "message", (message) => {
             console.log("here");
             setMessages(curr => ([...curr, message]))
@@ -42,7 +41,7 @@ const ChatBox = (props) => {
     return (
         <div>
             <div className="container">
-                <InfoBar room={room} />
+                <InfoBar room={props.type} />
                 <Messages messages={messages} />
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
             </div>
