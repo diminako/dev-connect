@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp";
 import MessageBoard from "./components/MessageBoard";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import SelfEdit from "./components/SelfEdit"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/message" component={MessageBoard} />
+        <Route exact path="/selfedit" component={SelfEdit} />
        
       </div>
       
