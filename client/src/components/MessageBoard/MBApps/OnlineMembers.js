@@ -28,22 +28,7 @@ function OnlineMembers() {
                                 <li className="header">Person1</li>
                                 <li className="header">Person1</li>
                                 <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
+                               
                                </ul>
                          {/* <div className="small-8 cell"></div> */}
                     {/* </div> */}
