@@ -1,12 +1,12 @@
-import React from "react";
-import ChatBox from "../../ChatBox"
+// import React from "react";
+// import ChatBox from "../../ChatBox"
 
-function Chat() {
-  return (
-    <>
-      <ChatBox />
-    </> 
-  );
-}
+// function Chat() {
+//   return (
+//     <>
+//             <ChatBox />
+//     </> 
+//   );
+// }
 
-export default Chat;
+// export default Chat;

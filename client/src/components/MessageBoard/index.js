@@ -1,15 +1,30 @@
-import React, { useContext } from "react";
-import Chat from "./MBApps/Chat";
+import React, { useContext, useState } from "react";
+import ChatBox from "../ChatBox";
 import Improvements from "./MBApps/Improvements";
-import RoomName from "./MBApps/RoomName";
 import Strengths from "./MBApps/Strengths";
 import OnlineMembers from "./MBApps/OnlineMembers";
 import UserContext from "../../Store/UserContext";
 
 
 
-function MessageBoard() {
+const MessageBoard = () => {
   const { username } = useContext(UserContext);
+  const [selectedRoom, setSelectedRoom] = useState("HTML CSS");
+
+  const rooms = [
+    "HTML CSS",
+    "JavaScript",
+    "NodeJS",
+    "Database"
+  ];
+
+
+
+  const changeRoom = (e, room) => {
+    e.preventDefault();
+    // setSelectedRoom(e.target.value);
+    setSelectedRoom(room);
+  }
 
   return (
     <>
@@ -43,8 +58,19 @@ function MessageBoard() {
             </div>
             <div className="cell medium-6">
               <div className="callout">
-                <RoomName />
-                <Chat />
+                <div className="stacked-for-small button-group">
+                {
+                rooms.map(room =>
+                    <button
+                      type="button"
+                      className="button primary"
+                      name={room}
+                      onClick={(e) => changeRoom(e, room)}>
+                      {room}
+                    </button>
+                )}
+                </div>
+                <ChatBox type={selectedRoom} />
               </div>
             </div>
             <div className="cell medium-3">
