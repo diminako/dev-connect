@@ -22,8 +22,8 @@ const ChatBox = (props) => {
             type:  props.type || "message",
             username
         };
-        console.log(messages)
-        socketRef.current.emit("send", messages);
+        console.log(messages);
+        socketRef.current.emit("send", messages, () => setMessage(""));
     }
 
     useEffect(() => {
@@ -32,10 +32,10 @@ const ChatBox = (props) => {
             console.log(id, "id");
         })
         socketRef.current.on(props.type ? props.type : "message", (message) => {
-            console.log("here");
             setMessages(curr => ([...curr, message]))
         })
     }, []);
+
 
     return (
         <div>

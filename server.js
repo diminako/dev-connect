@@ -25,10 +25,15 @@ app.use(morgan('tiny'));
 io.on("connection", socket => {
   console.log('connected')
   socket.emit("your id", socket.id);
-  socket.on("send", body => {
+  
+  socket.on("send", (body, callback) => {
     console.log(body)
     io.emit(body.type, body)
+
+    callback();
   })
+  
+
 })
 
 app.use(express.urlencoded({ extended: true }));
