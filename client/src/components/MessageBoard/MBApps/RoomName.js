@@ -4,7 +4,6 @@ import React from "react";
 function RoomName() {
   return (
     <>
-      <h5 className="text-center header">Current Room</h5>
       <label className="header">Select Room
         <select>
           <option id="chatAPI" value="API">API</option>
