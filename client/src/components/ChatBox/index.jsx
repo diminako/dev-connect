@@ -4,8 +4,7 @@ import Messages from "./Messages";
 import Input from "./Input";
 import io from "socket.io-client";
 import UserContext from '../../Store/UserContext';
-
-
+import "./index.css";
 
 const ChatBox = (props) => {
 
@@ -40,13 +39,11 @@ const ChatBox = (props) => {
     }, []);
 
     return (
-        <div>
-            <div className="container">
-                <InfoBar room={room} />
-                <Messages messages={messages} />
-                <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-            </div>
-        </div>
+     <div className="container">
+        <InfoBar room={room} />
+        <Messages messages={messages} />
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+     </div>
     )
 }
 
