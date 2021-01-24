@@ -8,8 +8,9 @@ import SignUp from "./components/SignUp";
 import MessageBoard from "./components/MessageBoard";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import SelfEdit from "./components/SelfEdit"
 import UserContext from "./Store/UserContext";
-import TestBoard from "./components/TestBoard";
+
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/message" component={MessageBoard} />
-          <Route exact path="/testboard" component={TestBoard}/>
+          <Route exact path="/selfedit" component={SelfEdit} />
         </div>
 
         <Footer />
