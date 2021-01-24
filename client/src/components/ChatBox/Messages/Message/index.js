@@ -5,12 +5,10 @@ import './Message.css';
 import ReactEmoji from 'react-emoji';
 import UserContext from '../../../../Store/UserContext';
 
-const Message = ({ message
-  // : { text, user }
-  , name }) => {
+const Message = ({ message, name }) => {
   let isSentByCurrentUser = false;
   const {username} = useContext(UserContext)
-console.log(name, username)
+  console.log(name, username)
   if(name === username) {
     isSentByCurrentUser = true;
   }
