@@ -6,6 +6,7 @@ const NavTabs = ()  => {
 
   return (
     <>
+    <div className="top-bar">
       <div className="top-bar-left">
           <h1 className="nav">DevConnect</h1> <h5><span>...where developers come to &lt;link&gt; up</span></h5>
         {/* </div> */}
@@ -16,6 +17,7 @@ const NavTabs = ()  => {
           <li><Link to="/selfedit" className={location.pathname === "/selfedit" ? "SelfEdit" : ""}><i className="fi-list"></i><span><h3 className="nav">Edit Profile</h3></span></Link></li> 
         </ul>
       </div>
+     
    </>
   );}
 

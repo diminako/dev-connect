@@ -6,32 +6,56 @@ import ImagePH from "./FooterAssets/ImagePH.png";
 
 function Footer() {
     return (
+        // <div><span className="footer">
+        //     <a href="https://www.google.com/"><img
+        //         className="logo enlarge" src={ImagePH}
+        //         alt={"PLACEHOLDER"} />
+        //     </a></span>
+        //     <span className="footer">
+        //         <a href="https://www.google.com/"><img
+        //             className="logo enlarge" src={ImagePH}
+        //             alt={"PLACEHOLDER"} />
+        //         </a></span>
+        //     <span className="footer">
+        //         <a href="https://www.google.com/"><img
+        //             className="logo enlarge" src={ImagePH}
+        //             alt={"PLACEHOLDER"} />
+        //         </a></span>
+
+        // </div>
+
+
+
+
+
+
+        /////////////////////////////RANDY'S/////////////////////////////////
         <div>
             <div className="footer">
                 <div className="footer-holder">
                     <div className="footerTitle"> Useful Links</div>
                     <div className="footer-content">
                         <div className="footer-section">
-                            <p><a href="https://www.google.com/"><img
+                            <a href="https://www.google.com/"><img
                                 className="logo enlarge" src={ImagePH}
                                 alt={"PLACEHOLDER"} />
                             </a>
-                            </p>
+                            
                         </div>
                         <div className="footer-section">
-                            <p><a href="https://www.google.com/"><img
+                            <a href="https://www.google.com/"><img
                                 className="logo enlarge" src={ImagePH}
                                 alt={"PLACEHOLDER"} />
                             </a>
-                            </p>
+                            
                         </div>
                         <div className="footer-section">
 
-                            <p><a href="https://www.google.com/"><img
+                            <a href="https://www.google.com/"><img
                                 className="logo enlarge" src={ImagePH}
                                 alt={"PLACEHOLDER"} />
                             </a>
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
