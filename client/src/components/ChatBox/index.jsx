@@ -4,8 +4,7 @@ import Messages from "./Messages";
 import Input from "./Input";
 import io from "socket.io-client";
 import UserContext from '../../Store/UserContext';
-
-
+import "./index.css";
 
 const ChatBox = (props) => {
 
