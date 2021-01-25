@@ -69,7 +69,17 @@ Visit the deployed site and create a user (sign up) and then log in. Once you ar
 
 ## Technologies Used
 
-* list your technologies used in the app
+* React
+* Socket.io
+* heroku
+* bcrypt
+* Express
+* Mongoose
+* Passport
+* React-emoji
+* Styled-components
+* Foundation
+* Google Fonts
 
 
 
