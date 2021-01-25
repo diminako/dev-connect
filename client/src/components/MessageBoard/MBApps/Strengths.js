@@ -4,7 +4,7 @@ import UserContext from "../../../Store/UserContext";
 
 
 
-function Strengths() {
+const Strengths = () => {
   const {skill} = useContext(UserContext)
 
     return (
