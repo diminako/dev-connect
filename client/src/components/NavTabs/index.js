@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React, {useState} from "react";
-=======
 import { set } from "mongoose";
 import React, { useContext, useState } from "react";
->>>>>>> 7e1945ebc8ba1bc4f140e2faecba75b654c968a6
 import { Link, useLocation } from "react-router-dom";
 import UserContext from "../../Store/UserContext";
 // import axios from "axios";
