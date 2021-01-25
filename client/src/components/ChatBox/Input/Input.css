@@ -9,6 +9,7 @@
     padding: 5%;
     width: 80%;
     font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
   }
   
   input:focus, textarea:focus, select:focus{
