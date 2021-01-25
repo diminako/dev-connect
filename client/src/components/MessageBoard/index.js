@@ -4,6 +4,7 @@ import Improvements from "./MBApps/Improvements";
 import Strengths from "./MBApps/Strengths";
 import OnlineMembers from "./MBApps/OnlineMembers";
 import UserContext from "../../Store/UserContext";
+import { Redirect } from "react-router";
 
 
 
@@ -27,6 +28,7 @@ const MessageBoard = () => {
   }
 
   return (
+  username ? (
     <>
       <img className="bg" alt="teamwork " src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-193-ae-00070.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a642750a6aa2bf3ff96e964c924dab97" />
       <div className="grid-container fluid">
@@ -90,7 +92,8 @@ const MessageBoard = () => {
             </div>
           </div>
         </div></div>
-    </>
+    </>)
+    :<Redirect to = "/"/>
   );
 }
 

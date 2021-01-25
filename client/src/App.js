@@ -19,7 +19,11 @@ function App() {
 
   const [user, setUser] = useState({
     username: "",
-    onSignIn: (user) => setUser((o)=>({...o, username:user})),
+    skill:[],
+
+    onSignIn: ({username, skill}) =>{
+       setUser((o)=>({...o, username, skill}))
+      },
     onSignOut:()=>{
       axios.get('/api/logout')
       .then(res=>{

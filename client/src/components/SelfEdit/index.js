@@ -1,27 +1,22 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import EditCard from "./EditCard";
 import users from "./users.json";
+import Strengths from "./EditCard/StrengthsCard";
+import UserContext from "../../Store/UserContext";
+import { Redirect } from "react-router";
 
-class SelfEdit extends Component {
-  
-  state = {
-    users
-  };
+const SelfEdit = () => {
 
-
-
+  const { username } = useContext(UserContext);
 
 
 
-  
+  return (
+    username ? (
 
-
-  render() {
-    
-
-    return (
       <div>
         <h1>Edit Skills</h1>
+        <Strengths />
 
         <EditCard
           id={users.id}
@@ -33,9 +28,12 @@ class SelfEdit extends Component {
         />
       </div>
 
-    );
-  }
+    )
+
+      : <Redirect to = "/" />
+  );
 }
+
 
 export default SelfEdit;
 
