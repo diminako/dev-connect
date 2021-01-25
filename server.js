@@ -68,6 +68,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
 
+app.use((req,res,next) =>{
+  console.log(req.session);
+  
+  console.log(req.user);
+  next();
+});
+
+
+//....................end of Middleware...........................................
+
+
+
 app.post("/api/", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
@@ -109,8 +121,7 @@ app.get("/api/message/:type", async (req, res) => {
     res.json(chatLog)
 })
 
-app.get('/logout', function(req, res){
-  
+app.get('/api/logout', (req, res) =>{
   req.logout();
   res.redirect('/');
 });

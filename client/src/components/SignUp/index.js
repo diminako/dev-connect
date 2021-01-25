@@ -29,6 +29,7 @@ const SignUp = () => {
       console.log(res);
       history.push("/");
     })
+<<<<<<< HEAD
   };
 
   return (
@@ -44,6 +45,33 @@ const SignUp = () => {
             <div className="grid-container">
               <div className="small-1 cell"></div>
               <div className="small-10 cell">
+=======
+
+  };
+
+  const handleMultiSelect = e =>{
+    const options = e.target.options;
+    const selectedArray = []
+
+    for (let i = 0; i < options.length; i++) {
+      if(options[i].selected){
+        selectedArray.push(options[i].value);
+      }
+      
+    }
+    setRegisterSkill(selectedArray)
+  }
+
+
+
+  return (
+    <>
+      <div className="cell">
+          <div className="grid-container">
+          <h1 className="text-center header sign-up-pg">Sign Up Page</h1>
+          <div className="grid-x grid-padding-x">
+              <div className="small-6 cell small-offset-3">
+>>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
                 <div className="callout">
                   <form onSubmit={register}>
                     <div className="grid-container">
@@ -81,7 +109,11 @@ const SignUp = () => {
                             <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
                           </label>
                           <label className="caveat"><h5>
+<<<<<<< HEAD
                             <select onChange={e => setRegisterSkill(e.target.value)} multiple>
+=======
+                              <select onChange={handleMultiSelect} multiple>
+>>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
                               <option id="skillAPI" value="API">API</option>
                               <option id="skillAJAX" value="AJAX">AJAX</option>
                               <option id="skillCSS" value="CSS">CSS</option>
@@ -109,9 +141,15 @@ const SignUp = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
     </div>
+=======
+     
+      
+    </>
+>>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
   );
-}
+};
 
 export default SignUp;
