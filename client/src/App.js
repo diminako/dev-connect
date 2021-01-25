@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, {  useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavTabs from "./components/NavTabs";
 import Login from "./components/Login";
@@ -24,14 +24,13 @@ function App() {
       <UserContext.Provider value={user}>
 
         <NavBar />
-        <div>
           <NavTabs />
-          <Route exact path="/" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/message" component={MessageBoard} />
-          <Route exact path="/selfedit" component={SelfEdit} />
-        </div>
-
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/message" component={MessageBoard} />
+            <Route exact path="/selfedit" component={SelfEdit} />
+          </Switch>
         <Footer />
       </UserContext.Provider>
     </Router>
