@@ -4,5 +4,14 @@
   justify-content: space-between;
   background: #fff;
   border-radius: 8px;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 8px;
+  height: 500px;
 }
