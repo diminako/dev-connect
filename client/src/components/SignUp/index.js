@@ -29,23 +29,6 @@ const SignUp = () => {
       console.log(res);
       history.push("/");
     })
-<<<<<<< HEAD
-  };
-
-  return (
-    <div>
-      <img className="bg" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-193-ae-00070.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a642750a6aa2bf3ff96e964c924dab97" alt="teamwork"></img>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="page-header">
-              <h1 className="text-center header sign-up-pg">Sign Up Page</h1>
-            </div>
-            <div className="grid-container">
-              <div className="small-1 cell"></div>
-              <div className="small-10 cell">
-=======
 
   };
 
@@ -71,7 +54,6 @@ const SignUp = () => {
           <h1 className="text-center header sign-up-pg">Sign Up Page</h1>
           <div className="grid-x grid-padding-x">
               <div className="small-6 cell small-offset-3">
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
                 <div className="callout">
                   <form onSubmit={register}>
                     <div className="grid-container">
@@ -109,11 +91,7 @@ const SignUp = () => {
                             <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
                           </label>
                           <label className="caveat"><h5>
-<<<<<<< HEAD
-                            <select onChange={e => setRegisterSkill(e.target.value)} multiple>
-=======
                               <select onChange={handleMultiSelect} multiple>
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
                               <option id="skillAPI" value="API">API</option>
                               <option id="skillAJAX" value="AJAX">AJAX</option>
                               <option id="skillCSS" value="CSS">CSS</option>
@@ -141,14 +119,9 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-    </div>
-=======
      
       
     </>
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
   );
 };
 

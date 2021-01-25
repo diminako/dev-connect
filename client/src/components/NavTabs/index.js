@@ -1,19 +1,14 @@
 import { set } from "mongoose";
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import UserContext from "../../Store/UserContext";
 // import axios from "axios";
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
 
 
 
 const NavTabs = ()  => {
   const [showing, setShowing] = useState(false);
   const location = useLocation();
-<<<<<<< HEAD
-=======
   const userContext = useContext(UserContext)
   // const logout = () => {
   //   console.log("logout button")
@@ -23,7 +18,6 @@ const NavTabs = ()  => {
     userContext.onSignOut()
 
   }
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
 
   return (
     <>

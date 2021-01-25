@@ -5,17 +5,6 @@ import Strengths from "./EditCard/StrengthsCard";
 import UserContext from "../../Store/UserContext";
 import { Redirect } from "react-router";
 
-<<<<<<< HEAD
-class SelfEdit extends Component {
-  state = {
-    users
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>Edit Skills</h1>
-=======
 const SelfEdit = () => {
 
   const { username } = useContext(UserContext);
@@ -29,7 +18,6 @@ const SelfEdit = () => {
         <h1>Edit Skills</h1>
         <Strengths />
 
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
         <EditCard
           id={users.id}
           key={users.id}
@@ -39,16 +27,11 @@ const SelfEdit = () => {
           weaknesses={users[0].weaknesses}
         />
       </div>
-<<<<<<< HEAD
-    );
-  }
-=======
 
     )
 
       : <Redirect to = "/" />
   );
->>>>>>> 89788f429f54aede6186ea3b1e0c3e69a22c2ad2
 }
 
 

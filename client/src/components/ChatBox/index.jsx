@@ -61,8 +61,8 @@ const ChatBox = (props) => {
     }, [props.type]);
 
     return (
-        <div>
-            <div className="container">
+        <div className="messageWrapper">
+
                 <InfoBar 
                 room={props.type} />
                 <Messages 
@@ -71,7 +71,7 @@ const ChatBox = (props) => {
                 message={message} 
                 setMessage={setMessage} 
                 sendMessage={sendMessage} />
-            </div>
+
         </div>
     )
 }
