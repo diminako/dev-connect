@@ -32,7 +32,18 @@ const SignUp = () => {
     
   };
 
+  const handleMultiSelect = e =>{
+    const options = e.target.options;
+    const selectedArray = []
 
+    for (let i = 0; i < options.length; i++) {
+      if(options[i].selected){
+        selectedArray.push(options[i].value);
+      }
+      
+    }
+    setRegisterSkill(selectedArray)
+  }
 
 
 
@@ -90,7 +101,7 @@ const SignUp = () => {
                           <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
                           </label>
                           <label className="caveat"><h5>
-                              <select onChange={e => setRegisterSkill(e.target.value)} multiple>
+                              <select onChange={handleMultiSelect} multiple>
                               <option id="skillAPI" value="API">API</option>
                               <option id="skillAJAX" value="AJAX">AJAX</option>
                               <option id="skillCSS" value="CSS">CSS</option>

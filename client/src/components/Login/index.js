@@ -9,6 +9,7 @@ const Login = () => {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const user = useContext(UserContext);
+  const skill = useContext(UserContext);
   const history = useHistory();
 
   const login = (event) => {
@@ -22,8 +23,8 @@ const Login = () => {
       withCredentials: true,
       url: "/api/",
     }).then((res) => {
-      const userSignIn = res.data.username;
-      user.onSignIn(userSignIn);
+
+      user.onSignIn(res.data);
       if (res.data) {
         history.push("/message");
       }
