@@ -20,12 +20,16 @@ const io = socket(server);
 
 app.use(morgan('tiny'));
 
+
+
 io.on("connection", socket => {
   console.log('connected')
   socket.emit("your id", socket.id);
   socket.on("send", (body, callback) => {
     console.log(body)
     io.emit(body.type, body)
+    newMessages = new Chat(body)
+    newMessages.save();
     callback();
   })
 })
@@ -99,22 +103,10 @@ app.post("/api/signup", (req, res) => {
   })
 });
 
-/////////////////// FIX THE Information getting saved//////////////////
-app.post("/api/chats", (req, res) => {
-  console.log(res)
-    const newChatLog = new Chat({
-      body: req.body.body,
-      type: req.body.type,
-      username: req.body.username
-    })
-    console.log(newChatLog)
-    newChatLog.save();
-    res.send("Message Stored")
-})
-//////////////////////////////////////////////////////////////////////
 
-app.get("/api/message", (req, res) => {
-  res.json({ "test": "test" });
+app.get("/api/message/:type", async (req, res) => {
+    const chatLog = await Chat.find({type : req.params.type});
+    res.json(chatLog)
 })
 
 app.get('/logout', function(req, res){
