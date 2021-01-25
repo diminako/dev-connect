@@ -8,7 +8,6 @@ import UserContext from '../../../../Store/UserContext';
 const Message = ({ message, name }) => {
   let isSentByCurrentUser = false;
   const {username} = useContext(UserContext)
-  console.log(name, username)
   if(name === username) {
     isSentByCurrentUser = true;
   }

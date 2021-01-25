@@ -22,7 +22,7 @@ const MessageBoard = () => {
 
   const changeRoom = (e, room) => {
     e.preventDefault();
-    // setSelectedRoom(e.target.value);
+
     setSelectedRoom(room);
   }
 
@@ -60,10 +60,11 @@ const MessageBoard = () => {
               <div className="callout">
                 <div className="stacked-for-small button-group">
                 {
-                rooms.map(room =>
+                rooms.map((room, i) =>
                     <button
+                      key={i}
                       type="button"
-                      className="button primary"
+                      className={`button ${(room === selectedRoom ? "secondary" : "primary")}`}
                       name={room}
                       onClick={(e) => changeRoom(e, room)}>
                       {room}

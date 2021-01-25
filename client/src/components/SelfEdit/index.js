@@ -3,26 +3,14 @@ import EditCard from "./EditCard";
 import users from "./users.json";
 
 class SelfEdit extends Component {
-  
   state = {
     users
   };
 
-
-
-
-
-
-  
-
-
   render() {
-    
-
     return (
       <div>
         <h1>Edit Skills</h1>
-
         <EditCard
           id={users.id}
           key={users.id}
@@ -32,7 +20,6 @@ class SelfEdit extends Component {
           weaknesses={users[0].weaknesses}
         />
       </div>
-
     );
   }
 }

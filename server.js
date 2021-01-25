@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
-
+const Chat = require("./models/chat");
 const morgan = require('morgan');
 const http = require("http")
 const mongoose = require("mongoose");
@@ -15,26 +15,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
 const socket = require("socket.io");
+// const Chat = require("./models");
 const io = socket(server);
 
-
-
-// Define middleware here
-
 app.use(morgan('tiny'));
+
 io.on("connection", socket => {
   console.log('connected')
   socket.emit("your id", socket.id);
-  
   socket.on("send", (body, callback) => {
     console.log(body)
     io.emit(body.type, body)
-
     callback();
   })
-  
-
 })
+
+// Define middleware here
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -57,11 +53,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(cors({
-//   origin: "http://localhost:3001",
-//   credentials: true
-// }));
-
 app.use(session({
   secret: "secretcode",
   resave: true,
@@ -72,17 +63,6 @@ app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
-
-// app.use((req,res,next) =>{
-//   console.log(req.session);
-//   console.log(req.user);
-//   next();
-// });
-
-
-//....................end of Middleware...........................................
-
-
 
 app.post("/api/", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
@@ -119,6 +99,20 @@ app.post("/api/signup", (req, res) => {
   })
 });
 
+/////////////////// FIX THE Information getting saved//////////////////
+app.post("/api/chats", (req, res) => {
+  console.log(res)
+    const newChatLog = new Chat({
+      body: req.body.body,
+      type: req.body.type,
+      username: req.body.username
+    })
+    console.log(newChatLog)
+    newChatLog.save();
+    res.send("Message Stored")
+})
+//////////////////////////////////////////////////////////////////////
+
 app.get("/api/message", (req, res) => {
   res.json({ "test": "test" });
 })
@@ -131,10 +125,6 @@ app.get('/logout', function(req, res){
 
 // Add routes, both API and view
 // app.use(routes);
-
-
-
-
 
 // Start the API server
 server.listen(PORT, function () {
