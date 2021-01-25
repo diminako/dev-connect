@@ -7,7 +7,7 @@ import UserContext from "../../Store/UserContext";
 
 
 const NavTabs = ()  => {
-  
+  const [showing, setShowing] = useState(false);
   const location = useLocation();
   const userContext = useContext(UserContext)
   // const logout = () => {

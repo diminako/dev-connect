@@ -7,23 +7,15 @@
 .footer{
     background: #5b5656 ;
     color: azure;
-    height: 250px;
     position: relative;
 }
 .footer .footer-bottom{
     background:#4d4646;
     color: white;
-    /* color:#7fcd91; */
-    height: 50px;
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    padding-top: 20px;
-    font-size: large;
-    /* border-top: 1px solid teal; */
-
+    padding: 20px;
+    font-size: 2rem;
 }
 .footer-section{
     flex: 1;
