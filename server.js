@@ -73,11 +73,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
 
-// app.use((req,res,next) =>{
-//   console.log(req.session);
-//   console.log(req.user);
-//   next();
-// });
+app.use((req,res,next) =>{
+  console.log(req.session);
+  
+  console.log(req.user);
+  next();
+});
 
 
 //....................end of Middleware...........................................
@@ -119,12 +120,12 @@ app.post("/api/signup", (req, res) => {
   })
 });
 
-app.get("/api/message", (req, res) => {
+app.get("/message", (req, res) => {
+  
   res.json({ "test": "test" });
 })
 
-app.get('/logout', function(req, res){
-  
+app.get('/api/logout', (req, res) =>{
   req.logout();
   res.redirect('/');
 });

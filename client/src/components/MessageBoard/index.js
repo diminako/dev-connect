@@ -4,6 +4,7 @@ import Improvements from "./MBApps/Improvements";
 import Strengths from "./MBApps/Strengths";
 import OnlineMembers from "./MBApps/OnlineMembers";
 import UserContext from "../../Store/UserContext";
+import { Redirect } from "react-router";
 
 
 
@@ -27,8 +28,9 @@ const MessageBoard = () => {
   }
 
   return (
-    <>
-      <div classs="container">
+  username ? (
+    
+      <div className="container">
       <div className="grid-container">
         <h1 className="text-center mb-header header">Message Board</h1>
         <div className="grid-x grid-padding-x">
@@ -90,9 +92,10 @@ const MessageBoard = () => {
             </div>
           </div>
         </div>
-      </div>
-      </div>
-    </>
+        </div>
+        </div>
+    )
+    :<Redirect to = "/"/>
   );
 }
 

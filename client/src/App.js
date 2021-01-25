@@ -8,29 +8,43 @@ import SignUp from "./components/SignUp";
 import MessageBoard from "./components/MessageBoard";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
-import SelfEdit from "./components/SelfEdit"
+import SelfEdit from "./components/SelfEdit";
+// import Logout from "./components/Logout";
+
 import UserContext from "./Store/UserContext";
+import axios from "axios";
 
 
 function App() {
 
   const [user, setUser] = useState({
     username: "",
-    onSignIn: (user) => setUser((o)=>({...o, username:user}))
-  });
+    skill:[],
 
+    onSignIn: ({username, skill}) =>{
+       setUser((o)=>({...o, username, skill}))
+      },
+    onSignOut:()=>{
+      axios.get('/api/logout')
+      .then(res=>{
+        setUser((o)=>({...o, username:""}));
+        setRedirect(true)
+      });
+    }
+  });
+  const [redirect, setRedirect] = useState("false")
   return (
     <Router>
       <UserContext.Provider value={user}>
 
         <NavBar />
           <NavTabs />
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/message" component={MessageBoard} />
-            <Route exact path="/selfedit" component={SelfEdit} />
-          </Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/message" component={MessageBoard} />
+          <Route exact path="/selfedit" component={SelfEdit} />
+          {/* <Route exact path="/logout" component={Logout} /> */}
+
         <Footer />
       </UserContext.Provider>
     </Router>
