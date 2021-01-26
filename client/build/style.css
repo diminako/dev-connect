@@ -1,0 +1,71 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #afc728;
+}
+.container.green {
+    background-color: #afc728;
+}
+
+
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.chat-box {
+    height: 50px;
+}
+
+
+.callout, .caveat {
+    font-family: 'Caveat', cursive;
+    border-color: lightgrey;
+    border-width: 4px;
+}
+
+.card {
+    background-color: rgb(114, 101, 101);
+}
+
+ .bg { 
+    width: 100%;
+  }
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.card-divider {
+    background-color: rgb(184, 172, 172);
+}
+
+::placeholder {
+    color:grey;
+    opacity: 1;
+    font-size: large;
+}
+
+.Message, .Sign.Up, .button {
+      background-color: black;
+  }
+.button {
+      display: flex;
+      justify-content: center;
+}
+
+.card.online-members {
+    background-color: white;
+}
+
+
+.card-divider.online {
+    background-color: rgb(49, 129, 235);
+}

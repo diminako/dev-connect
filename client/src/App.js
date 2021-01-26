@@ -19,33 +19,36 @@ function App() {
 
   const [user, setUser] = useState({
     username: "",
-    skill:[],
+    skill: [],
 
-    onSignIn: ({username, skill}) =>{
-       setUser((o)=>({...o, username, skill}))
-      },
-    onSignOut:()=>{
+    onSignIn: ({ username, skill }) => {
+      setUser((o) => ({ ...o, username, skill }))
+    },
+    onSignOut: () => {
       axios.get('/api/logout')
-      .then(res=>{
-        setUser((o)=>({...o, username:""}));
-        if (!redirect) {
-          setRedirect(true)
-        }
-      });
+        .then(res => {
+          setUser((o) => ({ ...o, username: "" }));
+          if (!redirect){
+            setRedirect(true)
+          }
+        });
+    },
+    setSkills: (skills) => {
+      setUser((o) => ({ ...o, skill: skills }))
     }
   });
-  const [redirect, setRedirect] = useState("false")
+  const [redirect, setRedirect] = useState("false");
   return (
     <Router>
       <UserContext.Provider value={user}>
 
         <NavBar />
-          <NavTabs />
-          <Route exact path="/" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/message" component={MessageBoard} />
-          <Route exact path="/selfedit" component={SelfEdit} />
-          {/* <Route exact path="/logout" component={Logout} /> */}
+        <NavTabs />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/message" component={MessageBoard} />
+        <Route exact path="/selfedit" component={SelfEdit} />
+        {/* <Route exact path="/logout" component={Logout} /> */}
 
         <Footer />
       </UserContext.Provider>

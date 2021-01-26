@@ -4,7 +4,8 @@ const UserContext = React.createContext({
     username: "",
     skill: [],
     onSignIn: () => undefined,
-    onLogOut: () => undefined
+    onLogOut: () => undefined,
+    setSkills: () => undefined
 });
 
 export default UserContext;

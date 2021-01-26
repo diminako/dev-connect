@@ -40,12 +40,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://user:connect1234@dev-connect.ebtcz.mongodb.net/dev-connect?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 },
@@ -56,6 +56,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
 // .....................Middleware..................................................
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+////////////////ADDED for heroku server///////////////////////
+// app.use('/', express.static(path.join(__dirname, 'dist')))
+///////////////////////////////////////
 
 app.use(session({
   secret: "secretcode",
@@ -84,7 +88,7 @@ app.post("/api/", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) return res.sendStatus(403);
-
+    console.log('here')
     req.login(user, err => {
       if (err) throw err;
       delete user.password;
@@ -112,6 +116,16 @@ app.post("/api/signup", (req, res) => {
       res.send("User Created");
 
     }
+  })
+});
+
+
+app.put("/api/selfedit", (req, res) => {
+  console.log("Put Route Hit!!!!!")
+  console.log(req.user, "<=======")
+  User.findOneAndUpdate({ username: req.user.username },{skill: req.body.skill},(err, doc) => {
+    if (err) return res.sendStatus(404);
+    return res.sendStatus(200);
   })
 });
 
