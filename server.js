@@ -17,14 +17,24 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 // const Chat = require("./models");
 const io = socket(server);
+const users = {};
 
 app.use(morgan('tiny'));
 
 
 
 io.on("connection", socket => {
-  console.log('connected')
   socket.emit("your id", socket.id);
+  console.log(`USER ${socket.id} CONNECTED!!!!!`)
+
+  socket.on('login', function(data){
+    console.log('A User ' + data.userId + ' connected');
+    // saving userId to object with socket ID
+    users[socket.id] = data.userId;
+    io.emit("onlineUsers", users);
+  });
+
+
   socket.on("send", (body, callback) => {
     console.log(body)
     // newMessages = new Chat(body)
@@ -38,6 +48,15 @@ io.on("connection", socket => {
       }
     )
   })
+  
+  socket.on("disconnect", () => {
+    console.log('user ' + users[socket.id] + ' disconnected');
+    // remove saved socket from users object
+    delete users[socket.id];
+    io.emit("onlineUsers", users);
+
+  });
+  
 })
 
 // Define middleware here
