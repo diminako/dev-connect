@@ -11,7 +11,7 @@ function Strengths() {
       <>
       <h5 className="text-center caveat">Strengths</h5>
         <ul>
-        {skill.map(specificSkill => <li>{specificSkill}</li>)}
+        {skill.map((specificSkill, i) => <li key={i}>{specificSkill}</li>)}
         
 
         </ul>

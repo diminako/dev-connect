@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, {  useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import NavTabs from "./components/NavTabs";
 import Login from "./components/Login";
@@ -28,7 +28,9 @@ function App() {
       axios.get('/api/logout')
       .then(res=>{
         setUser((o)=>({...o, username:""}));
-        setRedirect(true)
+        if (!redirect) {
+          setRedirect(true)
+        }
       });
     }
   });
