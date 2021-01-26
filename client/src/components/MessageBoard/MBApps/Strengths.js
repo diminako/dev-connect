@@ -9,7 +9,7 @@ const Strengths = () => {
 
     return (
       <>
-      <h5 className="text-center caveat">Strengths</h5>
+      <h4 className="text-center caveat">Strengths</h4>
         <ul>
         {skill.map((specificSkill, i) => <li key={i}>{specificSkill}</li>)}
         

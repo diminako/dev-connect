@@ -1,4 +1,7 @@
-.top-bar, .nav, .horizontal.menu.top-bar-right.nav {
+.top-bar, 
+.nav, 
+.horizontal.menu.top-bar-right.nav 
+.vertical.medium-horizontal.menu.top-bar-right {
     color: white;
     background-color: black;
     font-family: 'Caveat', cursive;

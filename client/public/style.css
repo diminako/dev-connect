@@ -16,16 +16,18 @@ label {
 }
 
 
-.chat-box {
-    height: 50px;
-}
-
-
 .callout, .caveat {
     font-family: 'Caveat', cursive;
     border-color: lightgrey;
     border-width: 4px;
 }
+
+img {
+    border-color: lightgrey;
+    border-width: 4px;
+
+}
+
 
 .card {
     background-color: rgb(114, 101, 101);
