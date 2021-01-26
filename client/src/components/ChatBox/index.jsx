@@ -13,7 +13,6 @@ const ChatBox = (props) => {
     const {username} = useContext(UserContext);
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    const [type, setType] = useState("message");
     const socketRef = useRef();
 
     const sendMessage = (e) => {
@@ -25,22 +24,33 @@ const ChatBox = (props) => {
         };
 
         socketRef.current.emit("send", messages, () => setMessage(""));
+
+        socketRef.current.on(props.type ? props.type : "message", (eachMessage) => {
+            setMessages(curr => {
+                if(curr[curr.length - 1]._id !== eachMessage._id){
+                    return[...curr, eachMessage]
+                }
+                return curr
+                })
+         })
     }
 
-    /////////////////////////////////////
- 
+
       const loadMessages = () => {
         // console.log("HEY")
         API.getMessages(props.type)
           .then(res => {
             // console.log(res.data)
-            setMessages(res.data)
+            setMessages(res.data);
+            console.log("loaded data!")
+
+            const welcome = { body: `Welcome ${username} to the ${props.type} room!` }
+            setMessages(curr => ([...curr, welcome]));
           }
           )
-          .catch(err => console.log(type + "err" + err));
+          .catch(err => console.log(props.type + "err" + err));
       };
-    ////////////////////////////////////
-
+    
 
     useEffect(()=>{
         socketRef.current = io.connect('/');
@@ -51,12 +61,7 @@ const ChatBox = (props) => {
     }, [])
 
     useEffect(() => {
-        // console.log(props.type)
-        setType(props.type);
         loadMessages()
-        socketRef.current.on(props.type ? props.type : "message", (eachMessage) => {
-            setMessages(curr => ([...curr, eachMessage]))
-        })
     }, [props.type]);
 
     return (

@@ -27,10 +27,16 @@ io.on("connection", socket => {
   socket.emit("your id", socket.id);
   socket.on("send", (body, callback) => {
     console.log(body)
-    io.emit(body.type, body)
-    newMessages = new Chat(body)
-    newMessages.save();
-    callback();
+    // newMessages = new Chat(body)
+    // newMessages.save()
+    Chat.create(
+      body,
+      (err, message) => { 
+        io.emit(body.type, message)
+        console.log(message);
+        callback();
+      }
+    )
   })
 })
 
