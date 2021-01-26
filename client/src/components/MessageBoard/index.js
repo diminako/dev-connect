@@ -11,7 +11,7 @@ import { Redirect } from "react-router";
 const MessageBoard = () => {
   const { username } = useContext(UserContext);
   const [selectedRoom, setSelectedRoom] = useState("HTML CSS");
-
+  const [onlineUsers, setOnlineUsers] = useState([]);
   const rooms = [
     "HTML CSS",
     "JavaScript",
@@ -54,7 +54,7 @@ const MessageBoard = () => {
         <div className="cell medium-auto medium-cell-block-container">
           <div className="grid-x grid-padding-x">
             <div className="cell medium-3 medium-cell-block-y">
-              <OnlineMembers />
+              <OnlineMembers onlineUsers = {onlineUsers}/>
             </div>
             <div className="cell medium-6">
               <div className="callout">
@@ -71,7 +71,7 @@ const MessageBoard = () => {
                     </button>
                 )}
                 </div>
-                <ChatBox type={selectedRoom} />
+                <ChatBox type={selectedRoom} setOnlineUsers={setOnlineUsers}/>
               </div>
             </div>
             <div className="cell medium-3">
