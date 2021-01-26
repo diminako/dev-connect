@@ -84,7 +84,7 @@ app.post("/api/", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) return res.sendStatus(403);
-
+    console.log('here')
     req.login(user, err => {
       if (err) throw err;
       delete user.password;
@@ -112,6 +112,16 @@ app.post("/api/signup", (req, res) => {
       res.send("User Created");
 
     }
+  })
+});
+
+
+app.put("/api/selfedit", (req, res) => {
+  console.log("Put Route Hit!!!!!")
+  console.log(req.user, "<=======")
+  User.findOneAndUpdate({ username: req.user.username },{skill: req.body.skill},(err, doc) => {
+    if (err) return res.sendStatus(404);
+    return res.sendStatus(200);
   })
 });
 
