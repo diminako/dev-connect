@@ -57,6 +57,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+////////////////ADDED for heroku server///////////////////////
+app.use('/', express.static(path.join(__dirname, 'dist')))
+///////////////////////////////////////
+
 app.use(session({
   secret: "secretcode",
   resave: true,
