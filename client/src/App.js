@@ -28,14 +28,16 @@ function App() {
       axios.get('/api/logout')
         .then(res => {
           setUser((o) => ({ ...o, username: "" }));
-          setRedirect(true)
+          if (!redirect){
+            setRedirect(true)
+          }
         });
     },
     setSkills: (skills) => {
       setUser((o) => ({ ...o, skill: skills }))
     }
   });
-  const [redirect, setRedirect] = useState("false")
+  const [redirect, setRedirect] = useState("false");
   return (
     <Router>
       <UserContext.Provider value={user}>

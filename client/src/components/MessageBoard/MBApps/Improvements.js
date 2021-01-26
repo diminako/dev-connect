@@ -33,7 +33,7 @@ const Improvements = () => {
     <>
       <h5 className="text-center caveat">Improvement Opportunities</h5>
       <ul>
-        {mostFrequent.map(specificSkill => <li>{specificSkill}</li>)}
+        {mostFrequent.map((specificSkill, i) => <li key={i}>{specificSkill}</li>)}
 
 
       </ul>

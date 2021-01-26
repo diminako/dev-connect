@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 
 const allSkills = ["API", "AJAX", "CSS", "HTML", "Java", "Javascript", "JQuery", "MySQL", "MongoDB", "NodeJS", "Python", "React", "Sequelize"];
-const newOps = [];
+// const newOps = [];
 
 const SelfEdit = () => {
 
@@ -23,7 +23,6 @@ const SelfEdit = () => {
     axios.put("/api/selfedit",{
         skill: registerSkill})
         .then((res) => {
-      console.log(res);
       setSkills(registerSkill)
       history.push("/message");
     })
@@ -35,23 +34,6 @@ const SelfEdit = () => {
     const unskilledArray = fullSkillsList.filter(singleSkill => skill.includes(singleSkill))
     setMostFrequent(unskilledArray)
   },[skill])
-
-  // for (var i = 0; i < skill.length; i++) {
-  //   for (var j = 0; j < allSkills.length; j++) {
-
-  //     if (!allSkills[j].includes(skill[i])) {
-
-  //       newOps.push(allSkills[j])
-  //     }
-  //   }
-  // }
-  // let counts = newOps.reduce((a, c) => {
-  //   a[c] = (a[c] || 0) + 1;
-  //   return a;
-  // }, {});
-  // let maxCount = Math.max(...Object.values(counts));
-  // let mostFrequent = Object.keys(counts).filter(k => counts[k] === maxCount);
-
   
   const handleMultiSelect = e => {
     const options = e.target.options;
@@ -75,7 +57,7 @@ const SelfEdit = () => {
         <>
           <h5 className="text-center caveat">Strengths</h5>
           <ul>
-            {skill.map(specificSkill => <li> {specificSkill} </li>)}
+            {skill.map((specificSkill, i) => <li key={i}> {specificSkill} </li>)}
 
 
           </ul>
@@ -90,19 +72,7 @@ const SelfEdit = () => {
               </label>
               <label className="caveat"><h5>
                 <select onChange={handleMultiSelect} multiple>
-                  <option id="skillAPI" value="API">API</option>
-                  <option id="skillAJAX" value="AJAX">AJAX</option>
-                  <option id="skillCSS" value="CSS">CSS</option>
-                  <option id="skillHTML" value="HTML">HTML</option>
-                  <option id="skillJava" value="Java">Java</option>
-                  <option id="skillJavaScript" value="Javascript">Javascript</option>
-                  <option id="skillJQuery" value="JQuery">JQuery</option>
-                  <option id="skillMySQL" value="MySQL">MySQL</option>
-                  <option id="skillMongoDB" value="MongoDB">MongoDB</option>
-                  <option id="skillNodeJS" value="NodeJS">NodeJS</option>
-                  <option id="skillPython" value="Python">Python</option>
-                  <option id="skillReact" value="React">React</option>
-                  <option id="skillSequelize" value="Sequelize">Sequelize</option>
+                  {allSkills.map((skill, i) => <option key={i} id={`skill${skill}`} value={skill}>{skill}</option>)}
                 </select></h5>
               </label>
             </div>
