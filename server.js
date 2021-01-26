@@ -58,7 +58,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 ////////////////ADDED for heroku server///////////////////////
-app.use('/', express.static(path.join(__dirname, 'dist')))
+// app.use('/', express.static(path.join(__dirname, 'dist')))
 ///////////////////////////////////////
 
 app.use(session({
