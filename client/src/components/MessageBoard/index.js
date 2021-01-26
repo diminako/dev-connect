@@ -18,12 +18,10 @@ const MessageBoard = () => {
     "NodeJS",
     "Database"
   ];
-
-
-
+  
   const changeRoom = (e, room) => {
     e.preventDefault();
-    // setSelectedRoom(e.target.value);
+
     setSelectedRoom(room);
   }
 
@@ -61,16 +59,17 @@ const MessageBoard = () => {
             <div className="cell medium-6">
               <div className="callout">
                 <div className="stacked-for-small button-group">
-                  {
-                    rooms.map(room =>
-                      <button
-                        type="button"
-                        className="button primary"
-                        name={room}
-                        onClick={(e) => changeRoom(e, room)}>
-                        {room}
-                      </button>
-                    )}
+                {
+                rooms.map((room, i) =>
+                    <button
+                      key={i}
+                      type="button"
+                      className={`button ${(room === selectedRoom ? "secondary" : "primary")}`}
+                      name={room}
+                      onClick={(e) => changeRoom(e, room)}>
+                      {room}
+                    </button>
+                )}
                 </div>
                 <ChatBox type={selectedRoom} />
               </div>

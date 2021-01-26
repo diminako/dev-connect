@@ -88,7 +88,7 @@ const SignUp = () => {
                         <div className="small-3 cell"></div>
                         <div className="small-6 cell">
                           <label>
-                          <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
+                            <h4 className="header"><span>Select Your Skills</span></h4><h5 className="header"><span> (Multiple Select Menu)</span></h5>
                           </label>
                           <label className="caveat"><h5>
                               <select onChange={handleMultiSelect} multiple>

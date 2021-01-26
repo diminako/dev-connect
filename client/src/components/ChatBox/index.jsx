@@ -5,45 +5,70 @@ import Input from "./Input";
 import io from "socket.io-client";
 import UserContext from '../../Store/UserContext';
 import "./index.css";
+// import axios from "axios";
+import API from "../../utils/chatAPI";
 
 const ChatBox = (props) => {
 
     const {username} = useContext(UserContext);
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-
+    const [type, setType] = useState("message");
     const socketRef = useRef();
 
     const sendMessage = (e) => {
         e.preventDefault();
         const messages = {
             body: message,
-            id: "",
             type:  props.type || "message",
             username
         };
-        console.log(messages);
+
         socketRef.current.emit("send", messages, () => setMessage(""));
     }
 
-    useEffect(() => {
+    /////////////////////////////////////
+ 
+      const loadMessages = () => {
+        // console.log("HEY")
+        API.getMessages(props.type)
+          .then(res => {
+            // console.log(res.data)
+            setMessages(res.data)
+          }
+          )
+          .catch(err => console.log(type + "err" + err));
+      };
+    ////////////////////////////////////
+
+
+    useEffect(()=>{
         socketRef.current = io.connect('/');
         socketRef.current.on("your id", id => {
-            console.log(id, "id");
-        })
-        socketRef.current.on(props.type ? props.type : "message", (message) => {
-            setMessages(curr => ([...curr, message]))
-        })
-    }, []);
+            // console.log(id, "id");
+        });
 
+    }, [])
+
+    useEffect(() => {
+        // console.log(props.type)
+        setType(props.type);
+        loadMessages()
+        socketRef.current.on(props.type ? props.type : "message", (eachMessage) => {
+            setMessages(curr => ([...curr, eachMessage]))
+        })
+    }, [props.type]);
 
     return (
-        <div>
-            <div className="container">
-                <InfoBar room={props.type} />
-                <Messages messages={messages} />
-                <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-            </div>
+        <div className="messageWrapper">
+                <InfoBar 
+                room={props.type} />
+                <Messages 
+                messages={messages} />
+                <Input 
+                message={message} 
+                setMessage={setMessage} 
+                sendMessage={sendMessage} />
         </div>
     )
 }

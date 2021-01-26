@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const User = require("./models/user");
-
+const Chat = require("./models/chat");
 const morgan = require('morgan');
 const http = require("http")
 const mongoose = require("mongoose");
@@ -15,26 +15,26 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
 const socket = require("socket.io");
+// const Chat = require("./models");
 const io = socket(server);
 
-
-
-// Define middleware here
-
 app.use(morgan('tiny'));
+
+
+
 io.on("connection", socket => {
   console.log('connected')
   socket.emit("your id", socket.id);
-  
   socket.on("send", (body, callback) => {
     console.log(body)
     io.emit(body.type, body)
-
+    newMessages = new Chat(body)
+    newMessages.save();
     callback();
   })
-  
-
 })
+
+// Define middleware here
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -56,11 +56,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
 // .....................Middleware..................................................
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.use(cors({
-//   origin: "http://localhost:3001",
-//   credentials: true
-// }));
 
 app.use(session({
   secret: "secretcode",
@@ -120,9 +115,10 @@ app.post("/api/signup", (req, res) => {
   })
 });
 
-app.get("/message", (req, res) => {
-  
-  res.json({ "test": "test" });
+
+app.get("/api/message/:type", async (req, res) => {
+    const chatLog = await Chat.find({type : req.params.type});
+    res.json(chatLog)
 })
 
 app.get('/api/logout', (req, res) =>{
@@ -132,10 +128,6 @@ app.get('/api/logout', (req, res) =>{
 
 // Add routes, both API and view
 // app.use(routes);
-
-
-
-
 
 // Start the API server
 server.listen(PORT, function () {

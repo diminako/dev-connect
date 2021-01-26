@@ -9,7 +9,7 @@ const Login = () => {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const user = useContext(UserContext);
-  const skill = useContext(UserContext);
+  // const skill = useContext(UserContext);
   const history = useHistory();
 
   const login = (event) => {
