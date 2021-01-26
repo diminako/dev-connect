@@ -4,7 +4,7 @@ import React from "react";
 function Improvements() {
     return (
       <>
-      <h5 className="text-center caveat">Improvement Opportunities</h5>
+      <h4 className="text-center caveat improvements">Improvement Opportunities</h4>
         <ul></ul>
        </>
 

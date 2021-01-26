@@ -16,11 +16,6 @@ label {
 }
 
 
-.chat-box {
-    height: 50px;
-}
-
-
 .callout, .caveat {
     font-family: 'Caveat', cursive;
     border-color: lightgrey;

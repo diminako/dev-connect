@@ -8,7 +8,7 @@ function OnlineMembers() {
             <div className="grid-container chat">
                 <div className="grid-x grid-padding-x"> */}
                         <div className="card online-members">
-                        <div className="card-divider online">Online Members</div>
+                        <h4 className="card-divider online caveat">Online Members</h4>
                         {/* <div className="small-1 cell"></div>
                         <div className="small-3 cell">*/}
                             <ul className=""> 
