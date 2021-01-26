@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import ChatBox from "../ChatBox";
+import ChatBox from "../../components/ChatBox";
 import Improvements from "./MBApps/Improvements";
 import Strengths from "./MBApps/Strengths";
 import OnlineMembers from "./MBApps/OnlineMembers";

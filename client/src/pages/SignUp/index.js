@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./style.css";
 
 
 const SignUp = () => {
@@ -49,7 +50,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="cell">
+      <div className="cell green">
           <div className="grid-container">
           <h1 className="text-center header sign-up-pg">Sign Up Page</h1>
           <div className="grid-x grid-padding-x">

@@ -3,6 +3,7 @@ import UserContext from "../../Store/UserContext";
 import { Redirect } from "react-router";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./style.css";
 
 
 const allSkills = ["API", "AJAX", "CSS", "HTML", "Java", "Javascript", "JQuery", "MySQL", "MongoDB", "NodeJS", "Python", "React", "Sequelize"];

@@ -13,7 +13,8 @@ const Messages = ({ messages }) => {
         <ScrollToBottom className="messages">
     <div 
     className="messages">
-        {messages.map((message) => <div key={message._id}><Message message={message.body} name={message.username} /></div>)}
+        {/* I had to add the index on top of the message.id because of the workaround when we got duplicate messages. */}
+        {messages.map((message, i) => <div key={message._id + i}><Message message={message.body} name={message.username} /></div>)}
     </div>
     </ScrollToBottom>
         );
