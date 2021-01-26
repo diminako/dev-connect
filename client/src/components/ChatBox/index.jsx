@@ -5,7 +5,7 @@ import Input from "./Input";
 import io from "socket.io-client";
 import UserContext from '../../Store/UserContext';
 import "./index.css";
-import axios from "axios";
+// import axios from "axios";
 import API from "../../utils/chatAPI";
 
 const ChatBox = (props) => {
@@ -30,29 +30,28 @@ const ChatBox = (props) => {
     /////////////////////////////////////
  
       const loadMessages = () => {
-        console.log("HEY")
+        // console.log("HEY")
         API.getMessages(props.type)
           .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             setMessages(res.data)
           }
           )
-          .catch(err => console.log(err));
+          .catch(err => console.log(type + "err" + err));
       };
-      // Loads all books and sets them to books
     ////////////////////////////////////
 
 
     useEffect(()=>{
         socketRef.current = io.connect('/');
         socketRef.current.on("your id", id => {
-            console.log(id, "id");
+            // console.log(id, "id");
         });
 
     }, [])
 
     useEffect(() => {
-        console.log(props.type)
+        // console.log(props.type)
         setType(props.type);
         loadMessages()
         socketRef.current.on(props.type ? props.type : "message", (eachMessage) => {
@@ -62,7 +61,6 @@ const ChatBox = (props) => {
 
     return (
         <div className="messageWrapper">
-
                 <InfoBar 
                 room={props.type} />
                 <Messages 
@@ -71,7 +69,6 @@ const ChatBox = (props) => {
                 message={message} 
                 setMessage={setMessage} 
                 sendMessage={sendMessage} />
-
         </div>
     )
 }

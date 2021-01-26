@@ -1,5 +1,5 @@
-import { set } from "mongoose";
-import React, { useContext, useState } from "react";
+// import { set } from "mongoose";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import UserContext from "../../Store/UserContext";
 // import axios from "axios";
@@ -7,7 +7,7 @@ import UserContext from "../../Store/UserContext";
 
 
 const NavTabs = ()  => {
-  const [showing, setShowing] = useState(false);
+  // const [showing, setShowing] = useState(false);
   const location = useLocation();
   const userContext = useContext(UserContext)
   // const logout = () => {

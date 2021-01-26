@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import ImagePH from "./FooterAssets/ImagePH.png";
+// import ImagePH from "./FooterAssets/ImagePH.png";
 
 
 

@@ -3,9 +3,9 @@ import Message from './Message';
 import './Messages.css';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
-const debug = {
-    debug:false
-}
+// const debug = {
+//     debug:false
+// }
 
 const Messages = ({ messages }) => {
  
