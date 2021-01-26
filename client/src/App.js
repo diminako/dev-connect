@@ -2,13 +2,13 @@
 import React, {  useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import NavTabs from "./components/NavTabs";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import MessageBoard from "./components/MessageBoard";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import SelfEdit from "./components/SelfEdit";
+import NavTabs from "./pages/NavTabs";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import MessageBoard from "./pages/MessageBoard";
+import Footer from "./pages/Footer";
+import NavBar from "./pages/NavBar";
+import SelfEdit from "./pages/SelfEdit";
 // import Logout from "./components/Logout";
 
 import UserContext from "./Store/UserContext";
