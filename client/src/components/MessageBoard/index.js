@@ -18,9 +18,7 @@ const MessageBoard = () => {
     "NodeJS",
     "Database"
   ];
-
-
-
+  
   const changeRoom = (e, room) => {
     e.preventDefault();
 

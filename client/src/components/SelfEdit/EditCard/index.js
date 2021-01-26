@@ -6,25 +6,25 @@ function EditCard(props) {
   return (
     <div className="card">
       <div className="content">
-        <p>
+        {/* <p> */}
           <strong>Name:</strong> {props.firstName + " " + props.lastName}
-        </p>
+        {/* </p> */}
         <h1>Strengths!</h1>
-        <p>
-          {props.strengths.map(strength => (
-            <StrengthsCard
+        {/* <p> */}
+          {props.strengths.map((strength, i) => (
+            <StrengthsCard key={i}
               strengths={strength}
             />
           ))}
-        </p>
+        {/* </p> */}
         <h1> Weaknesses!</h1>
-        <p>
-          {props.weaknesses.map(weakness => (
-            <WeakCard
+        {/* <p> */}
+          {props.weaknesses.map((weakness, i) => (
+            <WeakCard key={i}
               weaknesses={weakness}
             />
           ))}
-        </p>
+        {/* </p> */}
       </div>
     </div>
   );
