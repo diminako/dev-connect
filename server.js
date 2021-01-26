@@ -45,7 +45,7 @@ app.use(express.json());
 // }
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/devconnect", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://user:connect1234@dev-connect.ebtcz.mongodb.net/dev-connect?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 },
