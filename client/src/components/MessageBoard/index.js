@@ -30,7 +30,7 @@ const MessageBoard = () => {
   return (
   username ? (
     
-      <div className="container">
+      <div className="container green">
       <div className="grid-container">
         <h1 className="text-center mb-header header">Message Board</h1>
         <div className="grid-x grid-padding-x">
