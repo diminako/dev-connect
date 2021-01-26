@@ -30,7 +30,7 @@ const ChatBox = (props) => {
     /////////////////////////////////////
  
       const loadMessages = () => {
-        console.log("HEY")
+        // console.log("HEY")
         API.getMessages(props.type)
           .then(res => {
             // console.log(res.data)

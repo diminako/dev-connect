@@ -12,22 +12,11 @@ function OnlineMembers() {
                         {/* <div className="small-1 cell"></div>
                         <div className="small-3 cell">*/}
                             <ul className=""> 
-                                <li className="header ">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
-                                <li className="header">Person1</li>
+                                <li className="header ">Dimi</li>
+                                <li className="header">David</li>
+                                <li className="header">Avery</li>
+                                <li className="header">Lorena</li>
+                                <li className="header">Randy</li>
                                
                                </ul>
                          {/* <div className="small-8 cell"></div> */}
