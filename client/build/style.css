@@ -1,10 +1,8 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #afc728;
+    /* font-family: 'Montserrat', sans-serif; */
+   
 }
-.container.green {
-    background-color: #afc728;
-}
+
 
 
 label {
@@ -23,9 +21,11 @@ label {
 
 .callout, .caveat {
     font-family: 'Caveat', cursive;
-    border-color: lightgrey;
-    border-width: 4px;
+    border: none;
+    border-radius: 20px;
 }
+
+
 
 .card {
     background-color: rgb(114, 101, 101);

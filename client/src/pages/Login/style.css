@@ -1,7 +1,74 @@
+
 .grid-container {
     font-family: 'Caveat', cursive;
 }
 .text-center.header, .small-10.cell {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
+    font-weight: bold;
 }
+.container.background{
+    background-image:url("https://s-techco.com/wp-content/uploads/2017/07/Orange-Tech-Background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-btn{
+    width: -webkit-fill-available;
+    border-radius: 40px;
+    background-color: #FB770D;
+    transition-duration: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-btn:hover, .login-btn:focus {
+    background-color: white; /* Green */
+    color: #FB770D;
+    border-color: #FB770D;
+  }
+ 
+
+.login-callout{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+/* .effect-1{
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+:focus{
+    outline: none;
+}
+
+
+.effect-1{
+    border:0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.effect-1 ~ .focus-border{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background-color: #3399FF; 
+    transition: 0.4s;
+    }
+.effect-1:focus ~ .focus-border{
+    width: 100%; 
+    transition: 0.4s;
+} */

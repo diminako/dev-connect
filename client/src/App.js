@@ -2,7 +2,6 @@
 import React, {  useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import NavTabs from "./components/NavTabs";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import MessageBoard from "./pages/MessageBoard";
@@ -43,7 +42,7 @@ function App() {
       <UserContext.Provider value={user}>
 
         <NavBar />
-        <NavTabs />
+        {/* <NavTabs /> */}
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/message" component={MessageBoard} />

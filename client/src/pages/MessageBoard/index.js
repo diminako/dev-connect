@@ -5,6 +5,7 @@ import Strengths from "./MBApps/Strengths";
 import OnlineMembers from "./MBApps/OnlineMembers";
 import UserContext from "../../Store/UserContext";
 import { Redirect } from "react-router";
+import NavTabs from "../../components/NavTabs";
 
 
 
@@ -27,29 +28,18 @@ const MessageBoard = () => {
 
   return (
   username ? (
-    
-      <div className="container green">
-      <div className="grid-container">
-        <h1 className="text-center mb-header header">Message Board</h1>
-        <div className="grid-x grid-padding-x">
-          <div className="medium-3 cell">
-            <div className="callout">
-              <Strengths />
+     <>
+     <NavTabs />
+      <div className="container background-color">
+      
+          <div className="cell">
+            <div className="callout profile-callout">
+              <h2 className="text-center header profile">Profile</h2>
+              <p className="text-center h3 username">{username}</p>
             </div>
           </div>
-          <div className="medium-6 cell">
-            <div className="callout">
-              <h2 className="text-center header">Profile</h2>
-              <p className="text-center h3">{username}</p>
-            </div>
-          </div>
-          <div className="medium-3 cell">
-            <div className="callout">
-              <Improvements />
-            </div>
-          </div>
-        </div>
-      </div>
+        
+      
       <div className="grid-y medium-grid-frame">
         <div className="cell medium-auto medium-cell-block-container">
           <div className="grid-x grid-padding-x">
@@ -64,7 +54,7 @@ const MessageBoard = () => {
                     <button
                       key={i}
                       type="button"
-                      className={`button ${(room === selectedRoom ? "secondary" : "primary")}`}
+                      className={`button ${(room === selectedRoom ? "secondary" : "orange-btn")}`}
                       name={room}
                       onClick={(e) => changeRoom(e, room)}>
                       {room}
@@ -75,9 +65,16 @@ const MessageBoard = () => {
               </div>
             </div>
             <div className="cell medium-3">
-                <p>
-                  <img alt="laptop" src="https://images.unsplash.com/photo-1591610768799-74d796271fb3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxhcHRvcCUyMGtleWJvYXJkfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
-                  </p>
+             <div className="medium-3 cell">
+               <div className="callout">
+                 <Strengths />
+               </div>
+             </div>
+             <div className="medium-3 cell">
+                <div className="callout">
+                  <Improvements />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -91,6 +88,7 @@ const MessageBoard = () => {
         </div>
         </div>
         </div>
+        </>
     )
     :<Redirect to = "/"/>
   );

@@ -23,7 +23,7 @@ const NavTabs = ()  => {
     <>
   <div className="top-bar nav">
       <div className="top-bar-left nav">
-          <h1 className="nav">DevConnect</h1> <h5 className="header"><span>...where developers come to &lt;link&gt; up</span></h5>
+          <h1 className="navBrand">DevConnect</h1> <h5 className="header"><span>...where developers come to &lt;link&gt; up</span></h5>
         </div>
         <ul className="vertical medium-horizontal menu top-bar-right">
          {!useContext.username &&<> <li><Link to="/" className={location.pathname === "/login" ? "Login" : "nav"} ><i className="fi-list"></i><span><h3 className="nav">Login</h3></span></Link></li>

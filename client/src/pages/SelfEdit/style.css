@@ -7,5 +7,32 @@
 }
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #afc728;
+
+}
+
+.skills-btn{
+    width: -webkit-fill-available;
+    border-radius: 40px;
+    background-color: #FB770D;
+    transition-duration: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.skills-btn:hover, .login-btn:focus {
+    background-color: white; /* Green */
+    color: #FB770D;
+    border-color: #FB770D;
+  }
+ 
+
+.skills-callout{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 140px;
+    border-radius: 15px;
 }

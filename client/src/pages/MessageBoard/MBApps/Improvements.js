@@ -31,10 +31,9 @@ const Improvements = () => {
 
   return (
     <>
-      <h5 className="text-center caveat">Improvement Opportunities</h5>
+      <h4 className="text-center orange-underline">Improvement Opportunities</h4>
       <ul>
         {mostFrequent.map((specificSkill, i) => <li key={i}>{specificSkill}</li>)}
-
 
       </ul>
     </>
