@@ -143,9 +143,6 @@ Email:
 on our website
 
 
-
-## Photos
-
 ## Screenshot  
 ![Image of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/proj3screen.png)  
 
