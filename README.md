@@ -55,6 +55,7 @@
 ## Description
 
 This app allows a user to create a profile of their strengths and ender a set of chat rooms that are related to their strengths or weaknesses.
+[Dev-Connect!](https://secret-refuge-67245.herokuapp.com/)  
 
 
 
@@ -142,19 +143,13 @@ Email:
 on our website
 
 
-
-## Photos
-
-![DeployedPhoto]()
-
-place your photo in the parentheses
+## Screenshot  
+![Image of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/proj3screen.png)  
 
 
 
 
 ## Video
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+![GIF of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/project3gif.gif)  
 
