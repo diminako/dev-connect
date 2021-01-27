@@ -1,12 +1,37 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #afc728;
-}
-.container.green {
-    background-color: #afc728;
+    
 }
 
+.container.background-color{
+    background-color: #FFEBDB;
+    border-radius: none;
+}
+.callout.profile-callout{
+    background-image:url("https://s-techco.com/wp-content/uploads/2017/07/Orange-Tech-Background.jpg");
+    color:white;
+}
+.text-center.h3.username{
+    font-size: 45px;
+}
+.text-center.header.profile{
+    font-size: 50px;
+    margin: 3px;
+}
 
+.callout {
+    border: none !important;
+    border-radius: 20px !important;
+}
+.orange-underline {
+    border-bottom: 3px solid #FB770D;
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+}
+
+.orange-btn {
+    background-color: #FB770D !important;
+}
 label {
     font-family: 'Montserrat', sans-serif;
 }
@@ -15,8 +40,12 @@ label {
     font-family: 'Montserrat', sans-serif;
 }
 
+.header.onlineUsers{
+    font-size: 23px;
+}
 
-.callout, .caveat {
+
+ .caveat {
     font-family: 'Caveat', cursive;
     border-color: lightgrey;
     border-width: 4px;
@@ -27,6 +56,8 @@ img {
     border-width: 4px;
 
 }
+
+
 
 
 .card {
@@ -69,5 +100,8 @@ h2 {
 
 
 .card-divider.online {
-    background-color: rgb(49, 129, 235);
+    background-color: #FB770D;
+    color: white;
+    font-weight:bold;
+    font-size: 30px;
 }

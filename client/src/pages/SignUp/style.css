@@ -4,8 +4,43 @@
 .text-center.header, .small-10.cell {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
+    font-weight: bold;
 }
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #afc728;
+    
+}
+.cell.background{
+    background-image:url("https://s-techco.com/wp-content/uploads/2017/07/Orange-Tech-Background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.signup-btn{
+    width: -webkit-fill-available;
+    border-radius: 40px;
+    background-color: #FB770D;
+    transition-duration: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.signup-btn:hover, .signup-btn:focus {
+    background-color: white; /* Green */
+    color: #FB770D;
+    border-color: #FB770D;
+  }
+ 
+
+.signup-callout{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 20x;
+    border-radius: 15px;
 }

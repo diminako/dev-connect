@@ -4,5 +4,10 @@
 .vertical.medium-horizontal.menu.top-bar-right {
     color: white;
     background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.navBrand{
     font-family: 'Caveat', cursive;
 }
