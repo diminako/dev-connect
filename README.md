@@ -60,7 +60,9 @@ This app allows a user to create a profile of their strengths and ender a set of
 
 ## Screenshot  
 ![Image of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/proj3screen.png)  
-![Image of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/project3gif.png)  
+
+## GIF
+![GIF of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/project3gif.png)  
 
 
 
