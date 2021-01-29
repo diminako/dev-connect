@@ -149,5 +149,5 @@ on our website
 
 ## Video
 
-![GIF of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/project3gif.gif)  
+![GIF of the webpage](https://raw.githubusercontent.com/diminako/dev-connect/main/screenshots/project3.gif)  
 
